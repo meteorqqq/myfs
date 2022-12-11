@@ -81,26 +81,13 @@
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "/usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake"
-		},
-		{
-			"path" : "CMake/FindFUSE.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.22/Modules/FindPackageMessage.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/meteor/user-land-filesystem/fs/myfs/build",
-		"source" : "/home/meteor/user-land-filesystem/fs/myfs"
+		"build" : "/home/meteor/user-land-filesystem/tests/test_ddriver/build",
+		"source" : "/home/meteor/user-land-filesystem/tests/test_ddriver"
 	},
 	"version" : 
 	{
