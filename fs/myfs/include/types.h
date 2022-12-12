@@ -42,7 +42,7 @@ typedef enum myfs_file_type {
 
 #define MYFS_MAX_FILE_NAME       128
 #define MYFS_INODE_PER_FILE      1
-#define MYFS_DATA_PER_FILE       6
+#define MYFS_DATA_PER_FILE       4
 #define MYFS_DEFAULT_PERM        0777
 
 #define MYFS_IOC_MAGIC           'S'

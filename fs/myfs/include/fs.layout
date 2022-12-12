@@ -22,6 +22,6 @@
 #    | Super(x) | Add Map(1) | ...(20) | Inode Map(y) | DATA Map(z) | DATA(*) |
 # 5. 该布局文件用于检查你的文件系统是否符合要求, 请保证你的布局文件中的数据块数量与
 #    实际的数据块数量一致.
-# FS:4MB 每个文件分配6个数据块和一个Inode
+# FS:4MB 每个文件分配4个数据块和一个Inode
 | BSIZE = 1024 B |
-| Super(1) | Inode Map(1) | Data Map(1) | Inodes(585) | Data(*) |
+| Super(1) | Inode Map(1) | Data Map(1) | Inodes(816) | Data(*) |
