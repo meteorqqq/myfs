@@ -73,57 +73,57 @@ CMakeFiles/myfs.dir/src/bitmap.c.o: CMakeFiles/myfs.dir/flags.make
 CMakeFiles/myfs.dir/src/bitmap.c.o: ../src/bitmap.c
 CMakeFiles/myfs.dir/src/bitmap.c.o: CMakeFiles/myfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meteor/user-land-filesystem/fs/myfs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/myfs.dir/src/bitmap.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/myfs.dir/src/bitmap.c.o -MF CMakeFiles/myfs.dir/src/bitmap.c.o.d -o CMakeFiles/myfs.dir/src/bitmap.c.o -c /home/meteor/user-land-filesystem/fs/myfs/src/bitmap.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/myfs.dir/src/bitmap.c.o -MF CMakeFiles/myfs.dir/src/bitmap.c.o.d -o CMakeFiles/myfs.dir/src/bitmap.c.o -c /home/meteor/user-land-filesystem/fs/myfs/src/bitmap.c
 
 CMakeFiles/myfs.dir/src/bitmap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/myfs.dir/src/bitmap.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/meteor/user-land-filesystem/fs/myfs/src/bitmap.c > CMakeFiles/myfs.dir/src/bitmap.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/meteor/user-land-filesystem/fs/myfs/src/bitmap.c > CMakeFiles/myfs.dir/src/bitmap.c.i
 
 CMakeFiles/myfs.dir/src/bitmap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/myfs.dir/src/bitmap.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/meteor/user-land-filesystem/fs/myfs/src/bitmap.c -o CMakeFiles/myfs.dir/src/bitmap.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/meteor/user-land-filesystem/fs/myfs/src/bitmap.c -o CMakeFiles/myfs.dir/src/bitmap.c.s
 
 CMakeFiles/myfs.dir/src/myfs.c.o: CMakeFiles/myfs.dir/flags.make
 CMakeFiles/myfs.dir/src/myfs.c.o: ../src/myfs.c
 CMakeFiles/myfs.dir/src/myfs.c.o: CMakeFiles/myfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meteor/user-land-filesystem/fs/myfs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/myfs.dir/src/myfs.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/myfs.dir/src/myfs.c.o -MF CMakeFiles/myfs.dir/src/myfs.c.o.d -o CMakeFiles/myfs.dir/src/myfs.c.o -c /home/meteor/user-land-filesystem/fs/myfs/src/myfs.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/myfs.dir/src/myfs.c.o -MF CMakeFiles/myfs.dir/src/myfs.c.o.d -o CMakeFiles/myfs.dir/src/myfs.c.o -c /home/meteor/user-land-filesystem/fs/myfs/src/myfs.c
 
 CMakeFiles/myfs.dir/src/myfs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/myfs.dir/src/myfs.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/meteor/user-land-filesystem/fs/myfs/src/myfs.c > CMakeFiles/myfs.dir/src/myfs.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/meteor/user-land-filesystem/fs/myfs/src/myfs.c > CMakeFiles/myfs.dir/src/myfs.c.i
 
 CMakeFiles/myfs.dir/src/myfs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/myfs.dir/src/myfs.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/meteor/user-land-filesystem/fs/myfs/src/myfs.c -o CMakeFiles/myfs.dir/src/myfs.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/meteor/user-land-filesystem/fs/myfs/src/myfs.c -o CMakeFiles/myfs.dir/src/myfs.c.s
 
 CMakeFiles/myfs.dir/src/myfs_debug.c.o: CMakeFiles/myfs.dir/flags.make
 CMakeFiles/myfs.dir/src/myfs_debug.c.o: ../src/myfs_debug.c
 CMakeFiles/myfs.dir/src/myfs_debug.c.o: CMakeFiles/myfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meteor/user-land-filesystem/fs/myfs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/myfs.dir/src/myfs_debug.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/myfs.dir/src/myfs_debug.c.o -MF CMakeFiles/myfs.dir/src/myfs_debug.c.o.d -o CMakeFiles/myfs.dir/src/myfs_debug.c.o -c /home/meteor/user-land-filesystem/fs/myfs/src/myfs_debug.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/myfs.dir/src/myfs_debug.c.o -MF CMakeFiles/myfs.dir/src/myfs_debug.c.o.d -o CMakeFiles/myfs.dir/src/myfs_debug.c.o -c /home/meteor/user-land-filesystem/fs/myfs/src/myfs_debug.c
 
 CMakeFiles/myfs.dir/src/myfs_debug.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/myfs.dir/src/myfs_debug.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/meteor/user-land-filesystem/fs/myfs/src/myfs_debug.c > CMakeFiles/myfs.dir/src/myfs_debug.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/meteor/user-land-filesystem/fs/myfs/src/myfs_debug.c > CMakeFiles/myfs.dir/src/myfs_debug.c.i
 
 CMakeFiles/myfs.dir/src/myfs_debug.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/myfs.dir/src/myfs_debug.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/meteor/user-land-filesystem/fs/myfs/src/myfs_debug.c -o CMakeFiles/myfs.dir/src/myfs_debug.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/meteor/user-land-filesystem/fs/myfs/src/myfs_debug.c -o CMakeFiles/myfs.dir/src/myfs_debug.c.s
 
 CMakeFiles/myfs.dir/src/myfs_utils.c.o: CMakeFiles/myfs.dir/flags.make
 CMakeFiles/myfs.dir/src/myfs_utils.c.o: ../src/myfs_utils.c
 CMakeFiles/myfs.dir/src/myfs_utils.c.o: CMakeFiles/myfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meteor/user-land-filesystem/fs/myfs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/myfs.dir/src/myfs_utils.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/myfs.dir/src/myfs_utils.c.o -MF CMakeFiles/myfs.dir/src/myfs_utils.c.o.d -o CMakeFiles/myfs.dir/src/myfs_utils.c.o -c /home/meteor/user-land-filesystem/fs/myfs/src/myfs_utils.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/myfs.dir/src/myfs_utils.c.o -MF CMakeFiles/myfs.dir/src/myfs_utils.c.o.d -o CMakeFiles/myfs.dir/src/myfs_utils.c.o -c /home/meteor/user-land-filesystem/fs/myfs/src/myfs_utils.c
 
 CMakeFiles/myfs.dir/src/myfs_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/myfs.dir/src/myfs_utils.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/meteor/user-land-filesystem/fs/myfs/src/myfs_utils.c > CMakeFiles/myfs.dir/src/myfs_utils.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/meteor/user-land-filesystem/fs/myfs/src/myfs_utils.c > CMakeFiles/myfs.dir/src/myfs_utils.c.i
 
 CMakeFiles/myfs.dir/src/myfs_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/myfs.dir/src/myfs_utils.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/meteor/user-land-filesystem/fs/myfs/src/myfs_utils.c -o CMakeFiles/myfs.dir/src/myfs_utils.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/meteor/user-land-filesystem/fs/myfs/src/myfs_utils.c -o CMakeFiles/myfs.dir/src/myfs_utils.c.s
 
 # Object files for target myfs
 myfs_OBJECTS = \

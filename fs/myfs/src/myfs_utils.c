@@ -591,6 +591,7 @@ int myfs_mount(struct custom_options options) {
     myfs_super.is_mounted = TRUE;
 
     myfs_dump_map_inode();
+    myfs_dump_map_data();
     return ret;
 }
 
