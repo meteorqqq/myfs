@@ -1,1 +1,1 @@
-/usr/bin/gcc  -D_FILE_OFFSET_BITS=64 -no-pie -rdynamic CMakeFiles/myfs.dir/src/bitmap.c.o CMakeFiles/myfs.dir/src/myfs.c.o CMakeFiles/myfs.dir/src/myfs_debug.c.o CMakeFiles/myfs.dir/src/myfs_utils.c.o -o myfs  -lfuse /home/meteor/lib/libddriver.a 
+/usr/bin/cc  -D_FILE_OFFSET_BITS=64 -no-pie -rdynamic CMakeFiles/myfs.dir/src/bitmap.c.o CMakeFiles/myfs.dir/src/myfs.c.o CMakeFiles/myfs.dir/src/myfs_debug.c.o CMakeFiles/myfs.dir/src/myfs_utils.c.o -o myfs  -lfuse /home/meteor/lib/libddriver.a 

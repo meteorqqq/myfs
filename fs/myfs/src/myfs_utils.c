@@ -4,7 +4,7 @@
 extern struct myfs_super myfs_super;
 extern struct custom_options myfs_options;
 
-/**
+/** 
  * @brief 获取文件名
  *
  * @param path
@@ -38,7 +38,7 @@ int myfs_calc_lvl(const char *path) {
     return lvl;
 }
 
-/**
+/** 
  * @brief 驱动读
  *
  * @param offset
@@ -66,7 +66,7 @@ int myfs_driver_read(int offset, uint8_t *out_content, int size) {
     return MYFS_ERROR_NONE;
 }
 
-/**
+/** 
  * @brief 驱动写
  *
  * @param offset
@@ -97,7 +97,7 @@ int myfs_driver_write(int offset, uint8_t *in_content, int size) {
     return MYFS_ERROR_NONE;
 }
 
-/**
+/** 
  * @brief 为一个inode分配dentry，采用头插法
  *
  * @param inode
@@ -115,41 +115,7 @@ int myfs_alloc_dentry(struct myfs_inode *inode, struct myfs_dentry *dentry) {
     return inode->dir_cnt;
 }
 
-/**
- * @brief 将dentry从inode的dentrys中取出
- *
- * @param inode
- * @param dentry
- * @return int
- */
-int myfs_drop_dentry(struct myfs_inode *inode, struct myfs_dentry *dentry) {
-    boolean is_find = FALSE;
-    struct myfs_dentry *dentry_cursor;
-    dentry_cursor = inode->dentrys;
-
-    if (dentry_cursor == dentry) {
-        inode->dentrys = dentry->brother;
-        is_find = TRUE;
-    } else {
-        while (dentry_cursor) {
-            if (dentry_cursor->brother == dentry) {
-                dentry_cursor->brother = dentry->brother;
-                is_find = TRUE;
-                break;
-            }
-            dentry_cursor = dentry_cursor->brother;
-        }
-    }
-    if (!is_find) {
-        return -MYFS_ERROR_NOTFOUND;
-    }
-    inode->dir_cnt--;
-    return inode->dir_cnt;
-}
-
-// The upper same as simplefs
-
-/**
+/** 
  * @brief 分配一个inode，占用位图
  *
  * @param dentry 该dentry指向分配的inode
@@ -188,7 +154,7 @@ struct myfs_inode *myfs_alloc_inode(struct myfs_dentry *dentry) {
     return inode;
 }
 
-/**
+/** 
  * @brief 将内存inode及其下方结构全部刷回磁盘
  *
  * @param inode
@@ -255,74 +221,7 @@ int myfs_sync_inode(struct myfs_inode *inode) {
     }
 }
 
-/**
- * @brief 删除内存中的一个inode， 暂时不释放
- * Case 1: Reg File
- *
- *                  Inode
- *                /      \
- *            Dentry -> Dentry (Reg Dentry)
- *                       |
- *                      Inode  (Reg File)
- *
- *  1) Step 1. Erase Bitmap
- *  2) Step 2. Free Inode                      (Function of myfs_drop_inode)
- * ------------------------------------------------------------------------
- *  3) *Step 3. Free Dentry belonging to Inode (Outsider)
- * ========================================================================
- * Case 2: Dir
- *                  Inode
- *                /      \
- *            Dentry -> Dentry (Dir Dentry)
- *                       |
- *                      Inode  (Dir)
- *                    /     \
- *                Dentry -> Dentry
- *
- *   Recursive
- * @param inode
- * @return int
- */
-int myfs_drop_inode(struct myfs_inode *inode) {
-    struct myfs_dentry *dentry_cursor;
-    struct myfs_dentry *dentry_to_free;
-    struct myfs_inode *inode_cursor;
-
-    if (inode == myfs_super.root_dentry->inode) {
-        return MYFS_ERROR_INVAL;
-    }
-
-    if (MYFS_IS_DIR(inode)) {
-        dentry_cursor = inode->dentrys;
-        clear_bit(&myfs_super.map_inode, inode->ino);
-
-        while (dentry_cursor) {
-            inode_cursor = dentry_cursor->inode;
-            myfs_drop_inode(inode_cursor);
-            myfs_drop_dentry(inode, dentry_cursor);
-
-            for (int i = 0; i < MYFS_DATA_PER_FILE; i++) {
-                clear_bit(&myfs_super.map_data, inode->block_pointer[i]);
-            }
-
-            dentry_to_free = dentry_cursor;
-            dentry_cursor = dentry_cursor->brother;
-            free(dentry_to_free);
-        }
-    } else if (MYFS_IS_REG(inode) || MYFS_IS_SYM_LINK(inode)) {
-        clear_bit(&myfs_super.map_inode, inode->ino);
-        if (inode->data) {
-            for (int i = 0; i < MYFS_DATA_PER_FILE; i++) {
-                clear_bit(&myfs_super.map_data, inode->block_pointer[i]);
-            }
-            free(inode->data);
-        }
-        free(inode);
-    }
-    return MYFS_ERROR_NONE;
-}
-
-/**
+/** 
  * @brief
  *
  * @param dentry dentry指向ino，读取该inode
@@ -492,7 +391,7 @@ struct myfs_dentry *myfs_lookup(const char *path, boolean *is_find, boolean *is_
     return dentry_ret;
 }
 
-/**
+/** 
  * @brief 挂载myfs, Layout 如下
  *
  * Layout
@@ -535,7 +434,7 @@ int myfs_mount(struct custom_options options) {
     }
 
     if (myfs_super_d.magic_num != MYFS_MAGIC_NUM) {
-        // | Super(1) | Inode Map(1) | Data Map(1) | Inodes(585) | Data(*) |
+        // | Super(1) | Inode Map(1) | Data Map(1) | Inodes(816) | Data(*) |
         super_blks = MYFS_ROUND_UP(sizeof(struct myfs_super_d), MYFS_BLK_SZ()) / MYFS_BLK_SZ();
         inode_num = MYFS_DISK_SZ() / ((MYFS_DATA_PER_FILE + MYFS_INODE_PER_FILE) * MYFS_BLK_SZ());
         map_inode_blks = MYFS_ROUND_UP(MYFS_ROUND_UP(inode_num, UINT32_BITS) / UINT8_BITS, MYFS_IO_SZ()) / MYFS_IO_SZ();
@@ -595,7 +494,7 @@ int myfs_mount(struct custom_options options) {
     return ret;
 }
 
-/**
+/** 
  * @brief
  *
  * @return int

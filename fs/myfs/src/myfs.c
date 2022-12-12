@@ -99,7 +99,6 @@ int myfs_mkdir(const char *path, mode_t mode) {
     inode  = myfs_alloc_inode(dentry);
     myfs_alloc_dentry(last_dentry->inode, dentry);
 
-    myfs_dump_map_data();
     return MYFS_ERROR_NONE;
 }
 

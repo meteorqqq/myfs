@@ -40,13 +40,9 @@ int myfs_umount(void);
 
 int myfs_alloc_dentry(struct myfs_inode *inode, struct myfs_dentry *dentry);
 
-int myfs_drop_dentry(struct myfs_inode *inode, struct myfs_dentry *dentry);
-
 struct myfs_inode *myfs_alloc_inode(struct myfs_dentry *dentry);
 
 int myfs_sync_inode(struct myfs_inode *inode);
-
-int myfs_drop_inode(struct myfs_inode *inode);
 
 struct myfs_inode *myfs_read_inode(struct myfs_dentry *dentry, int ino);
 
