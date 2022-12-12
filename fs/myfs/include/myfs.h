@@ -14,17 +14,21 @@
 #include "errno.h"
 #include "types.h"
 
-#define MYFS_MAGIC                  /* Define by yourself */
-#define MYFS_DEFAULT_PERM    0777   /* 全权限打开 */
+#define MYFS_MAGIC             /* Define by yourself */
+#define MYFS_DEFAULT_PERM 0777 /* 全权限打开 */
 
 /******************************************************************************
-* SECTION: macro debug
-*******************************************************************************/
-#define MYFS_DBG(fmt, ...) do { printf("MYFS_DBG: " fmt, ##__VA_ARGS__); } while(0)
+ * SECTION: macro debug
+ *******************************************************************************/
+#define MYFS_DBG(fmt, ...)                       \
+    do                                           \
+    {                                            \
+        printf("MYFS_DBG: " fmt, ##__VA_ARGS__); \
+    } while (0)
 
 /******************************************************************************
-* SECTION: sfs_utils.c
-*******************************************************************************/
+ * SECTION: sfs_utils.c
+ *******************************************************************************/
 char *myfs_get_fname(const char *path);
 
 int myfs_calc_lvl(const char *path);
@@ -32,7 +36,6 @@ int myfs_calc_lvl(const char *path);
 int myfs_driver_read(int offset, uint8_t *out_content, int size);
 
 int myfs_driver_write(int offset, uint8_t *in_content, int size);
-
 
 int myfs_mount(struct custom_options options);
 
@@ -51,8 +54,8 @@ struct myfs_dentry *myfs_get_dentry(struct myfs_inode *inode, int dir);
 struct myfs_dentry *myfs_lookup(const char *path, boolean *is_find, boolean *is_root);
 
 /******************************************************************************
-* SECTION: myfs.c
-*******************************************************************************/
+ * SECTION: myfs.c
+ *******************************************************************************/
 void *myfs_init(struct fuse_conn_info *);
 
 void myfs_destroy(void *);
@@ -86,10 +89,10 @@ int myfs_open(const char *, struct fuse_file_info *);
 int myfs_opendir(const char *, struct fuse_file_info *);
 
 /******************************************************************************
-* SECTION: myfs_debug.c
-*******************************************************************************/
+ * SECTION: myfs_debug.c
+ *******************************************************************************/
 void myfs_dump_map_inode(void);
 
 void myfs_dump_map_data(void);
 
-#endif  /* _myfs_H_ */
+#endif /* _myfs_H_ */
