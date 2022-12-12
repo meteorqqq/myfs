@@ -590,7 +590,7 @@ int myfs_mount(struct custom_options options) {
     myfs_super.root_dentry = root_dentry;
     myfs_super.is_mounted = TRUE;
 
-    myfs_dump_map();
+    myfs_dump_map_inode();
     return ret;
 }
 

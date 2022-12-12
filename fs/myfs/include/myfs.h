@@ -92,6 +92,8 @@ int myfs_opendir(const char *, struct fuse_file_info *);
 /******************************************************************************
 * SECTION: myfs_debug.c
 *******************************************************************************/
-void myfs_dump_map(void);
+void myfs_dump_map_inode(void);
+
+void myfs_dump_map_data(void);
 
 #endif  /* _myfs_H_ */
