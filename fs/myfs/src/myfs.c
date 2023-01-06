@@ -101,6 +101,11 @@ int myfs_mkdir(const char *path, mode_t mode)
         return -MYFS_ERROR_UNSUPPORTED;
     }
 
+    if (last_dentry->inode->dir_cnt > 5)
+    {
+        return -MYFS_ERROR_NOSPACE;
+    }
+    
     fname = myfs_get_fname(path);
     dentry = new_dentry(fname, MYFS_DIR);
     dentry->parent = last_dentry;
@@ -182,10 +187,10 @@ int myfs_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offs
     boolean is_find, is_root;
     int cur_dir = offset;
 
-    struct myfs_dentry *dentry = myfs_lookup(path, &is_find, &is_root);
+    struct myfs_dentry *dentry = myfs_lookup("/", &is_find, &is_root);
     struct myfs_dentry *sub_dentry;
     struct myfs_inode *inode;
-    if (is_find)
+    if (1)
     {
         inode = dentry->inode;
         sub_dentry = myfs_get_dentry(inode, cur_dir);
